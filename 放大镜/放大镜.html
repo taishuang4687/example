@@ -5,8 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #small-box{
+        position: relative;
+        float: left;
+        width: 400px;
+        height: 400px;
+    }
+    #box{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background:rgba(253,253,253,0.5);
+        display:none;
+    }
+    #big-box{
+        float: left;
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+        display:none;
+        position:relative;
+        }
+        #big{
+            position:absolute;
+            left:0;
+            top:0;
+        }
+    </style>
 </head>
 <body>
+    <div id="small-box">
+        <img src="imgs/1.jpg">
+        <span id = 'box'></span>
+    </div>
     
+    <div id="big-box">
+        <img id = 'big' src="imgs/2.jpg">
+    </div>
+   <script>
+        var oSmallBox = document.getElementById('small-box');
+        var oBox = document.getElementById('box');
+        var oBigBox = document.getElementById('big-box');
+        var oBig = document.getElementById('big');
+        oSmallBox.onmouseover = function(e){
+            oBox.style.display = 'block';
+            oBigBox.style.display = 'block';
+            oSmallBox.onmousemove = function(){
+                var x = e.clientX - oBox.offsetWidth/2;
+                var y = e.clientY - oBox.offsetHeight/2;
+                var xMax = oSmallBox.offsetWidth - oBox.offsetWidth;
+                var yMax = oSmallBox.offsetHeight - oBox.offsetHeight;
+                var xBili = oBox.offsetLeft/xMax;
+                var yBili = oBox.offsetTop/yMax;
+                var maxX = oBig.offsetWidth - oBigBox.offsetWidth;
+                var maxY = oBig.offsetHeight - oBigBox.offsetHeight;                
+                if(x > xMax){
+                    x = xMax;
+                }
+                if(y > yMax){
+                    y = yMax;
+                }
+                if(x < 0){
+                    x = 0;
+                }
+                if(y < 0){
+                    y = 0;
+                }
+                oBox.style.left = x + 'px';
+                oBox.style.top = y + 'px';
+                oBig.style.left = -maxX*xBili + 'px';
+                oBig.style.top = -maxY*yBili + 'px';
+
+            }
+        }
+        oSmallBox.onmouseout = function(){
+            oBox.style.display = 'none';
+            oBigBox.style.display = 'none';
+        }
+   
+   
+   </script>
 </body>
 </html>
