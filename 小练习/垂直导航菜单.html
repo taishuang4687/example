@@ -44,14 +44,25 @@
     var aH2 = document.getElementsByTagName('h2');
     var aUl = document.getElementsByTagName('ul');
     for(var i = 0;i < aH2.length;i++){
+        // aH2[i].index = i;
+        // aH2[i].onclick = function(){
+        //     var oUl = aUl[this.index];
+        //     if(oUl.style.display == '' || oUl.style.display == 'none'){
+        //         oUl.style.display = 'block'; 
+        //     }else if(oUl.style.display == 'block'){
+        //         oUl.style.display = 'none';
+        //     }
+        // }
         aH2[i].index = i;
+        aH2[i].flag = false;
         aH2[i].onclick = function(){
             var oUl = aUl[this.index];
-            if(oUl.style.display == '' || oUl.style.display == 'none'){
-                oUl.style.display = 'block'; 
-            }else if(oUl.style.display == 'block'){
+            if(this.flag){
                 oUl.style.display = 'none';
+            }else{
+                oUl.style.display = 'block';
             }
+            this.flag = !this.flag;
         }
     }
     

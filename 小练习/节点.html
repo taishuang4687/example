@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    ul{
+        list-style: none;
+    }
+    </style>
 </head>
 <body>
-    <ul>
-        <li id = 'li1'>111</li>
+    <ul id = 'ul'>
+        <li id = 'li'>0000</li>
+        <li id = 'li1'>1111</li>
         <li id = 'li2'>2222</li>
     </ul>
     <script>
+    var oUl = document.getElementById('ul');
+    var oLi = document.getElementById('li');
     var oLi1 = document.getElementById('li1');
     var oLi2 = document.getElementById('li2');
     function next(elem){
@@ -21,8 +33,38 @@
         }while(elem && elem.nodeType != '1')
         return elem;
     }
+    function previous(elem){
+        do{
+            elem = elem.previousSibling;
+        }while(elem && elem.nodeType != '1')
+        return elem;
+    }
+    function first(elem){
+        elem = elem.firstChild;
+        if(elem != '1'){
+            elem = next(elem);
+           
+        }
+        return elem;
+        
+    }
     var oNext = next(oLi1);
-    oNext.style.background = 'green';
+    var oPrevious = previous(oLi2);
+    var oFirst = first(oUl);
+    oNext.style.background = '#ccc';
+    oPrevious.style.background = 'pink';
+    oFirst.style.background = '#ccc';
+    // // 节点操作
+    // var p = document.createElement('p');
+    // p.innerHTML = 'taishuang';
+    // oUl.appendChild(p);
+    // oUl.removeChild(p);
+    // oUl.insertBefore(p,oLi2);
+    // oUl.replaceChild(p,oLi2);
+
+
+
+
     
     
     
