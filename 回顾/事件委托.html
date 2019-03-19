@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    ul{
+        background: #ccc;
+    }
+    li{
+        background: pink;
+        list-style: none;
+    }
+    </style>
+</head>
+<body>
+    <button id = 'btn'>click</button>
+    <ul id="parent">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oParent = document.getElementById('parent');
+        var aLi = document.getElementsByTagName('li');
+        oBtn.onclick = function(){
+            // console.log(Math.random());
+           var oLi = document.createElement('li');
+           oLi.innerHTML = Math.random();
+           oParent.appendChild(oLi);
+        }
+    
+        oParent.onclick = function(e){
+            e = e || windows.event;
+            var target = e.target || e.srcElement;
+            if(target.tagName == 'LI'){
+                console.log(target.innerHTML);
+            }
+        
+        }
+
+       
+        
+    
+    
+    </script>
+</body>
+</html>

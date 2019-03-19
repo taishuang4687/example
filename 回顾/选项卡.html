@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 210px;
+            height: 210px;
+            background: #ccc;
+            position:relative;
+        }
+        #container .box{
+            width: 68px;
+            text-align: center;
+            color:white;
+            background: pink;
+            float:left;
+            margin-right:2px;
+            cursor: pointer;
+        }
+        #container .box1{
+            background: rgb(57, 177, 147);
+        }
+        #row li{
+            display:none;
+        }
+       #row .active{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class = 'box box1'>001</div>
+        <div class = 'box'>002</div>
+        <div class = 'box'>003</div>
+        <ul id = 'row'>
+            <li class = 'active'>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+        </ul>
+    </div>
+    <script src = ../jQuery/jquery-1.12.4.js></script>
+    <script>
+        $('')
+    
+    
+    </script>
+</body>
+</html>
