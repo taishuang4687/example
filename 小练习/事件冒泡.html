@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #0f0;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id = 'div1'>
+        <div id = 'div2'></div>
+    </div>
+    <script src = '../jQuery/jquery-1.12.4.js'></script>
+    <script>
+        //既有捕获又有冒泡，先捕获后冒泡
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        // oDiv1.addEventListener('click',function(){
+        //     console.log(1111+'捕获');
+        // },true)
+        // oDiv2.addEventListener('click',function(){
+        //     console.log(222222+'捕获');
+        // },true)
+        oDiv1.addEventListener('click',function(){
+            console.log(1111+'冒泡');
+            
+        },false)
+        oDiv2.addEventListener('click',function(e){
+            console.log(222222+'冒泡');
+            e.stopPropagation();//阻止事件见冒泡
+            // e.cancelBubble();
+
+        },false)
+    
+    
+    </script>
+</body>
+</html>
