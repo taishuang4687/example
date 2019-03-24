@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            touch-action: none;
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <!-- tap点击无延时，click在300毫秒以内点击两次认为是双击 -->
+    <div id="div1"></div>
+    <script src = 'zepto.js'></script>
+    <script src = 'touch.js'></script>
+    <script>
+        // $('#div1').on('click',function(){
+        //     console.log('div1 click');
+        // })
+        // $('#div1').on('tap',function(){
+        //     console.log('div1 tap');
+        // })
+        // $('#div1').on('touchstart',function(){
+        //     console.log('div1 touchstart');
+        // })
+        // $('#div1').on('touchend',function(){
+        //     console.log('div1 touchend');
+        // })
+        // $('#div1').on('touchcancel',function(){
+        //     console.log('touch move');
+        // // })
+        // $('#div1').on('singleTap',function(){
+        //     console.log('single tap');
+        // })
+        // $('#div1').on('doubleTap',function(){
+        //     console.log('double tap');
+        // })
+        // $('#div1').on('longTap',function(){
+        //     console.log('long tap');
+        // })
+        $('#div1').on('swipe',function(){
+            console.log('swipe');
+        })
+        $('#div1').on('swipeLeft',function(){
+            console.log('swipe left');
+        })
+        $('#div1').on('swipeRight',function(){
+            console.log('swipe right');
+        })
+        $('#div1').on('swipeUp',function(){
+            console.log('swipe up');
+        })
+        $('#div1').on('swipeDown',function(){
+            console.log('swipe down');
+        })
+        
+    </script>
+</body>
+</html>
