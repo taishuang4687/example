@@ -12,13 +12,13 @@
             perspective: 800px;
             perspective-origin: 50% 50%;
         }
-        #container{
+        .container{
             width: 200px;
             height: 200px;
             /* background: #f00; */
             margin: 200px auto;
             transform-style: preserve-3d;
-            animation: rotate 6s linear infinite
+            animation: rotate 6s linear infinite;
         }
         .cube{
             position:absolute;
@@ -44,13 +44,13 @@
             transform: rotateX(90deg) translateZ(-100px);
         }
         .five{
-            transform: translateZ(-100px);
+            transform:  rotateY(180deg) translateZ(100px);
         }
         .six{
             transform: translateZ(100px);
         }
         
-        @keyframes rorate{
+        @-webkit-keyframes rotate{
             to{
                 transform: rotateY(360deg);
             }
@@ -58,7 +58,7 @@
     </style>
 </head>
 <body>
-    <div id="container">
+    <div class="container">
         <div class="cube one">1</div>
         <div class="cube two">2</div>
         <div class="cube three">3</div>
