@@ -23,6 +23,7 @@
 #quick-menu .menu{
     float: left;
     padding: 0 14px;
+    cursor: pointer;
 }
 #quick-menu .trangle{
     position:relative;
@@ -35,7 +36,11 @@
     /* border-style: solid;
     border-color:#c0c0c0 transparent transparent transparent; */
 }
-#quick-menu .arrow{
+#quick-menu .trangle:hover > a{
+    text-decoration: underline;
+}
+#quick-menu .trangle::after{
+    content:'';
     width: 0;
     height: 0;
     border-width: 3px;
