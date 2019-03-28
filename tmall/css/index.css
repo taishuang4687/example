@@ -3,6 +3,7 @@
     background: #eee;
     font-size: 12px;
     line-height: 32px;
+    border:1px solid #eee;
     font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
 }
 #login-info{
@@ -27,12 +28,18 @@
 }
 #quick-menu .trangle{
     position:relative;
+    border-style: solid;
+    border-width: 0 1px;
+    border-color: transparent;
+    height: 33px;
 }
-#quick-menu .menu:hover a{
+#quick-menu .menu:hover >a {
     color: #fc0f3d;
+    display: block;
 }
 #quick-menu .trangle:hover{
     background: #fff;
+    border-color:transparent #eee;
     /* border-style: solid;
     border-color:#c0c0c0 transparent transparent transparent; */
 }
@@ -50,4 +57,29 @@
     top:50%;
     margin-top:-1.5px;
     right:4px;
+}
+#quick-menu .trangle:hover::after{
+    transform-origin: 3px 1.5px;
+    transform: rotate(180deg);
+    transition: all .4s ease;
+   
+}
+#quick-menu .trangle:hover .submenu{
+    display: block;
+}
+#quick-menu .submenu{
+    position:absolute;
+    width: 74px;
+    padding: 0 10px;
+    /* border: 1px solid #eee; */
+    left:-1px;
+    top:33px;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    border-color:#eee;
+    display: none;
+}
+#quick-menu .submenu a:hover{
+    color: #fc0f3d;
+    text-decoration:underline;
 }
