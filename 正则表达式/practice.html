@@ -40,10 +40,18 @@
         // reg = /.+/;
         // str = 'bluepiaoliang大西瓜';
         // console.log(reg.exec(str));
-        reg = /^./;
-        str = '\njhabuigyi';
+        // reg = /^./;
+        // str = '\njhabuigyi';
+        // console.log(reg.exec(str));
+        //[abc]表示abc中的任意一个,[a-z]表示小写字母，[A-Z]表示大写字母，[0-9]表示数字
+        //在字符集中，[^abc]表示不是abc中的任意一个,\b为边界，即以谁开头或结尾，\d表示数字，\D表示非数字
+        //\w表示单词字符
+        // reg = /[^abc]/;
+        // str = 'absolute';
+        // console.log(reg.exec(str));
+        reg = /^(?:b|c).+/;
+        str='bbs.blueidea.com';
         console.log(reg.exec(str));
-        //[abc]表示abc中的任意一个
 
 
     </script>
