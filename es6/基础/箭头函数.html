@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id = 'btn'>click</button>
+    <script>
+        // var fn = (x) => {
+        //     console.log(x);
+        // }下面为简单写法
+        // var fn = x =>console.log(x);
+        // fn('taishuang');
+        // var fn1 = function(){
+        //     console.log(this);
+        // }
+        // fn1();
+        var oBtn = document.getElementById('btn');
+        // oBtn.onclick = function(){
+        //     setTimeout(function(){
+        //         console.log(this);
+        //     },1000)
+        // }
+        // oBtn.onclick = () => {
+        //     setTimeout(() =>{
+        //         console.log(this);
+        //     },1000)
+            
+        // }
+        var obj = {
+            name:'zhaosi',
+            say:() =>{
+                console.log(this);
+            }
+        }
+        obj.say();
+    
+    
+    
+    
+    </script>
+</body>
+</html>
