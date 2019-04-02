@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name:'taishuang',
+            age:18
+        }
+        var pro = new Proxy(obj,{
+            set:(target,key,property)=>{
+                console.log(target,key,property);
+                console.log('我已经被改变');
+                target[key] = property;
+            },
+            get:(target,key,property)=>{
+                console.log(target,key,property);
+                console.log('我已经获取了');
+                return target[key];
+            }
+        })
+        obj.name = 'yangrong';
+        obj.age = 30;
+        console.log(obj);
+        console.log(pro.name);
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

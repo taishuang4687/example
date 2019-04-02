@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function fn(){
+            console.log('请求开始');
+            await request1();
+            console.log('请求1成功，开始请求2');
+            await request2();
+        }
+        fn();
+        async function request1(){
+            return new Promise(function(resolve,reject){
+                setTimeout(()=>{
+                    console.log('请求1开始');
+                    resolve();
+                },1000)
+            })
+        }
+        async function request2(){
+            return new Promise(function(resolve,reject){
+                setTimeout(()=>{
+                    console.log('请求2成功，继续请求');
+                    resolve();
+                },1000)
+            })
+        }
+    
+    
+    
+    
+    </script>
+</body>
+</html>
