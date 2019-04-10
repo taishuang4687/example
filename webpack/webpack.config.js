@@ -4,9 +4,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const glob = require('glob');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const webpack = require('webpack');
-const entry = require('./webpack_config/entry_webpack.js');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+// const entry = require('./webpack_config/entry_webpack.js');
 module.exports = {
-    entry :entry,
+    // entry :entry,
     mode:'development',
     entry:{
        'index':'./src/index.js'
@@ -81,7 +82,11 @@ module.exports = {
         new PurifyCSSPlugin({
             paths:glob.sync(path.join(__dirname,'src/*.html'))
         }),
-        new webpack.BannerPlugin('邰爽所有，翻版必究!')
+        new webpack.BannerPlugin('邰爽所有，翻版必究!'),
+        new CopyWebpackPlugin([{
+            from:__dirname + '/src/public',
+            to:'./public'
+        }])
     ],
     devServer:{
         contentBase:path.resolve(__dirname,'dist'),
