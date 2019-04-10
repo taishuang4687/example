@@ -1,3 +1,14 @@
-body{
-    background: #000;
+/*! 邰爽所有，翻版必究! */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: red url(http://localhost:8081/images/55afa07b978fd1da3a8f88bfce085270.jpg);
+}
+
+img {
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
 }

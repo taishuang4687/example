@@ -1,3 +1,2 @@
-console.log('aaaaaa');
-console.log('heilongjiandaxue');
 import css from './index.css';
+import sass from './css/common.scss';

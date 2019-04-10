@@ -1,3 +1,10 @@
 body{
-    background: #000;
+    background:red url(./images/bbb.jpg);
+}
+img{
+    transform: rotate(30deg);
+}
+.a{
+    width: 100px;
+    height: 100px;
 }
