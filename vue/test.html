@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            width: 1200px;
+            height: 30px;
+            margin: 0 auto;
+            background: pink;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        .active{
+            list-style: none;
+        }
+        .active li{
+            width: 299px;
+            height: 30px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            border-right:1px solid #ccc;
+
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+           <ul class = 'active'>
+               <li>选择</li>
+               <li>商品名称</li>
+               <li>商品价格</li>
+               <li>删除</li>
+           </ul>
+           <ul class = 'active aa'>
+                <li><input type="checkbox"></li>
+                <li>衣服</li>
+                <li>123</li>
+                <li>删除</li>
+            </ul>
+    </div>
+    <script src='vue.js'></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            }
+        })
+    
+    
+    
+    </script>
+</body>
+</html>

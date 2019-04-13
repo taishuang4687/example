@@ -84,7 +84,7 @@ module.exports = {
         }),
         new webpack.BannerPlugin('邰爽所有，翻版必究!'),
         new CopyWebpackPlugin([{
-            from:__dirname + '/src/public',
+            from:__dirname+'/src/public',
             to:'./public'
         }])
     ],
