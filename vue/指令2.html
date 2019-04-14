@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click = 'onclickHandle(2)'>点我加1</button>
+        <input type="number" v-model = 'num' @keyup.enter = 'keyup($event)'>
+        <h1>{{count}}</h1>
+    </div>
+    <script src='vue.js'></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                count:0,
+                num:0
+            },
+            methods:{
+                onclickHandle(x){
+                    this.count+=x;
+                },
+                keyup(e){
+                    // if(e.keyCode==13){
+                    //     this.count+=parseInt(this.num);
+                    // }
+                    this.count+=parseInt(this.num);
+
+                    
+                }
+            }
+        })
+    
+    
+    </script>
+</body>
+</html>

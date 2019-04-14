@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-text = 'msg'></div>
+        <div v-text = 'msg2'></div>
+        <div v-html = 'msg2'></div>
+        <div v-for = '(item,index) in arr'>
+            {{item}} {{index}}
+        </div>
+        <div v-for='user in listSort'>
+            {{user.name}} {{user.age}}
+        </div>
+        <div v-for='(attr,key) in dog'>
+            {{attr}} {{key}}
+        </div>
+    </div>
+    <script src='vue.js'></script>
+    <script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello world',
+            msg2:'<h1>hello</h1>',
+            arr:['html','css','javascript'],
+            list:[
+                {
+                    name:'taishuang',
+                    age:18
+                },
+                {
+                    name:'zs',
+                    age:20
+                },
+                {
+                    name:'zhaosi',
+                    age:16
+                },
+            ],
+            dog:{
+                    name:'wangcai',
+                    age:33
+            }
+        },
+        computed:{
+            listSort(){
+                return this.list.sort((a,b) =>{
+                    return a.age-b.age
+                });
+            }
+        }
+    })
+    </script>
+    
+</body>
+</html>
