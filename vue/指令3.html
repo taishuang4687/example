@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <form action="">
+                姓名是：<input type="text" value='name' v-model='name'>
+                <input type="text" value='name' v-model.lazy='name'>
+                姓名录入：{{name}}
+                <br>
+                <select name="" id="" v-model='school'>
+                    <option value="黑大">黑大</option>
+                    <option value="理工">理工</option>
+                    <option value="林大">林大</option>
+                    <option value="农大">农大</option>
+                    <br>
+                    <input type="email">
+                    <input type="range">
+                    <input type="date">
+                    <input type="url">
+                    <input type="submit" value="提交">
+                </select>
+        
+        </form>
+        
+    </div>
+    <script src='vue.js'></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                name:'',
+                school:'农大'
+
+            }
+        })
+    
+    
+    </script>
+</body>
+</html>
