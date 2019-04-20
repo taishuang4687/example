@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
+    <!-- <div id="app">
         <com></com>
     </div>
     <script src="../vue.js"></script>
@@ -17,8 +17,33 @@
 
         })
     var vm = new Vue({
-        el:'#app'
+        el:'#app',
+
+    }) -->
+    <div id="app">
+        <demo name='hehehehe' age=10></demo>
+    </div>
+    <template id="temp">
+        <div>
+            {{name}}------{{age}}
+        </div>
+    </template>
+    <script src="../vue.js"></script>
+    <script>
+    var vm = new Vue({
+        el:'#app',
+        components:{
+            'demo':{
+                template:'#temp',
+                props:['name','age']
+            }
+        }
     })
+    
+    
+    
+    
+    </script>
     
     
     
