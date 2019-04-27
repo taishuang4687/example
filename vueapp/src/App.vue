@@ -1,11 +1,11 @@
 <template>
   <div id='app'>
-    <common-header></common-header>
+    <common-header :selectMenu='selectMenu'></common-header>
     <div id='content'>
       <router-view></router-view>
     </div>
     
-    <common-footer></common-footer>
+    <common-footer :menu='menu' :selectMenu='selectMenu' @change="fn"></common-footer>
   </div>
 </template>
 
@@ -16,6 +16,46 @@
     components:{
       CommonHeader,
       CommonFooter
+    },
+    data(){
+      return{
+        menu:[
+          {
+            path:'/movie',
+            name:'电影',
+            bg:'pink'
+          },{
+            path:'/music',
+            name:'音乐',
+            bg:'#ccc'
+          },{
+            path:'/book',
+            name:'书籍',
+            bg:'#fabb63'
+          },{
+            path:'/photo',
+            name:'图片',
+            bg:'#c900ff'
+          }
+        ],
+        selectMenu:{
+          name:'电影',
+          path:'/movie',
+          bg:'pink'
+        }
+      }
+    },
+    methods:{
+      fn(index){
+        this.selectMenu = this.menu[index];
+      }
+    },
+    created(){
+      this.menu.forEach((obj,index)=>{
+        if(obj.path == this.$route.path){
+          this.selectMenu = obj;
+        }
+      })
     }
   }
 </script>
