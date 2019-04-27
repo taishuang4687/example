@@ -5,6 +5,7 @@ import A from './views/A.vue'
 import B from './views/B.vue'
 import Test1 from './views/Test1.vue'
 import Test2 from './views/Test2.vue'
+import C from './views/C.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -27,7 +28,11 @@ export default new Router({
       }]
     },{
       path:'/b',
+      name:'b',
       component:B
+    },{
+      path:'/c/:id',
+      component:C
     },
     {
       path: '/about',

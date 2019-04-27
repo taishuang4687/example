@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>我是B页面</h1>
-        <h1>我是：{{$route.params.name}}</h1>
+书籍
     </div>
 </template>
 
