@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="../react.development.js"></script>
+    <script src="../react-dom.development.js"></script>
+    <script src="../browser.min.js"></script>
+    <script type='text/babel'>
+        class Zujian extends React.Component{
+            constructor(params){
+                super(params)
+            }
+            render(){
+                return(
+                    <div>
+                        <h2>进行{this.props.name}测试</h2>
+                        <p>进行{this.props.content}传参测试</p>
+                        {this.props.children}
+                    </div>
+                )
+            }
+            
+        }
+        ReactDOM.render(
+            <Zujian name='第一次' content='第二次'>
+                <h3>hahahhaha</h3>    
+            </Zujian>,
+            document.getElementById('app')
+        )
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
     <div>
         {{$route.params.id}}
         {{movie.title}}
-        <img :src="movie.images.medium"/>
+        <img :src="movie.images.small"/>
     </div>
 </template>
 
