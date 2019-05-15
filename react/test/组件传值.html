@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="../react.development.js"></script>
+    <script src="../react-dom.development.js"></script>
+    <script src="../browser.min.js"></script>
+    <script type='text/babel'>
+        class Father extends React.Component{
+            constructor(params){
+                super(params);
+                this.add = this.add.bind(this);
+                this.state ={
+                    msg:0
+                }
+            }
+            add(num){
+                this.setState({
+                    msg:this.state.msg + num
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>main组件{this.state.msg}</h1>
+                        <Son add={this.add}></Son>
+                    </div>
+                    
+                )
+            }
+        }
+        class Son extends React.Component{
+            constructor(params){
+                super(params);
+            }
+            render(){
+                return(
+                    <div>
+                        <h3>hahahahha</h3>
+                        <button onClick={()=>{
+                            this.props.add(1)
+                        }}>add</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Father></Father>,
+            document.getElementById('app')
+        )
+    </script>
+</body>
+</html>
