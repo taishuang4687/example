@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="../react.development.js"></script>
+    <script src="../react-dom.development.js"></script>
+    <script src="../browser.min.js"></script>
+    <script type='text/babel'>
+        class Main extends React.Component{
+            constructor(params){
+                super(params);
+                this.addson = this.addson.bind(this)
+                this.state = {
+                    total:120,
+                    numA:100,
+                    numB:80
+                }
+            }
+            addson(x,name){
+                x = parseInt(x);
+                if(x <= this.state.total){
+                    this.setState({
+                    total:this.state.total - x,
+                    ['num' + name]:this.state['num'+name] + x
+                    })
+                }else{
+                    alert('士兵数量不足');          
+                }
+                
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>剩余士兵数量{this.state.total}</h1>
+                        <Shibing name='A' num={this.state.numA} addson={this.addson}></Shibing>
+                        <Shibing name='B' num={this.state.numB} addson={this.addson}></Shibing>
+                    </div>
+                    
+                )
+            }
+        }
+        class Shibing extends React.Component{
+            constructor(params){
+                super(params);
+            }
+            render(){
+                return(
+                    <div>
+                        <p>将军{this.props.name}有士兵:{this.props.num}</p>
+                        <input type='number' ref={input=>this.myinput=input}/>
+                        <button onClick={()=>{
+                            this.props.addson(this.myinput.value,this.props.name);
+                            this.myinput.value=''
+                        }}>调兵</button>
+                    </div>
+                    
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById('app')
+        )
+    </script>
+</body>
+</html>
