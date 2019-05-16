@@ -1,7 +1,7 @@
 <template>
-   <div>
-       <h1>test2页面</h1>
-   </div>
+    <div>
+        电影
+    </div>
 </template>
 
 <script>

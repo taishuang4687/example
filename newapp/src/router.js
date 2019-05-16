@@ -1,7 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-
+import '@/assets/css/reset.css'
+import '@/assets/js/rem.js'
+import Movie from '@/views/movie.vue'
+import Music from '@/views/music.vue'
+import Book from '@/views/book.vue'
+import Photo from '@/views/photo.vue'
+import CommonHeader from '@/components/CommonHeader.vue'
+import CommonFooter from '@/components/CommonFooter.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -9,17 +15,23 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component:CommonFooter,
+      path:'/footer'
+    },{
+      component:CommonHeader,
+      path:'/header'
+    },{
+      component:Movie,
+      path:'/movie'
+    },{
+      component:Music,
+      path:'/music'
+    },{
+      component:Book,
+      path:'/book'
+    },{
+      component:Photo,
+      path:'/photo'
     }
   ]
 })

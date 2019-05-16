@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>我是C页面</h1>
-        {{$route.params.id}}
+图片
     </div>
 </template>
 

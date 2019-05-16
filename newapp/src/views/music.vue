@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>test1页面</h1>
+音乐
     </div>
 </template>
 
