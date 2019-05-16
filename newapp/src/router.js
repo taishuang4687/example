@@ -32,6 +32,9 @@ export default new Router({
     },{
       component:Photo,
       path:'/photo'
+    },{
+      path:'/',
+      redirect:'/movie',
     }
   ]
 })

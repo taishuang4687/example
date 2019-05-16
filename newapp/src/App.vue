@@ -1,10 +1,10 @@
 <template>
   <div>
-      <Common-header></Common-header>
+      <Common-header :selectMenu='selectMenu'></Common-header>
       <div id="content">
         <router-view></router-view>
       </div>
-      <Common-footer :menu='menu' :bg='bg'></Common-footer>
+      <Common-footer :menu='menu' :selectMenu='selectMenu' @change='change'></Common-footer>
   </div>
 </template>
 
@@ -30,14 +30,32 @@
         },{
           name:'书籍',
           path:'/book',
-          bg:'cacbee'
+          bg:'#aeefcc'
         },{
           name:'图片',
           path:'/photo',
-          bg:'aeefcc'
+          bg:'#fabb63'
         }
-      ]
+      ],
+      selectMenu:
+        {
+          name:'电影',
+          path:'/movie',
+          bg:'pink'
+        }
       }
+    },
+    methods:{
+      change(index){
+        this.selectMenu = this.menu[index];
+      }
+    },
+    created(){
+      this.menu.foreach((obj,index)=>{
+        if(obj.path==this.$route.path){
+          this.selectMenu=obj;
+        }
+      })
     }
   }
 </script>
