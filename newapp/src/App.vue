@@ -51,7 +51,7 @@
       }
     },
     created(){
-      this.menu.foreach((obj,index)=>{
+      this.menu.forEach((obj,index)=>{
         if(obj.path==this.$route.path){
           this.selectMenu=obj;
         }
