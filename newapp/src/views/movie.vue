@@ -1,7 +1,7 @@
 <template>
     <div class='movie-container'>
         <ul>
-            <li class='movie-list' v-for='(obj,index) in movieList' :key='index'>
+            <li @click='goDetail(obj.id)' class='movie-list' v-for='(obj,index) in movieList' :key='index'>
             <img class='movie-img' :src="obj.images.medium" alt="">
             <div class='movie-content'>
                 <h4>{{obj.title}}</h4>
@@ -35,6 +35,9 @@
             }
         },
         methods:{
+            goDetail(id){
+                this.$router.push('/movieDetail/'+id)//编程式导航
+            },
             getMovie(){
             this.isShow = true;
             axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?city=广州&start='+this.movieList.length+'&count=10')

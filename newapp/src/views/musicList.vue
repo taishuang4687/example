@@ -36,6 +36,7 @@
                    this.musicData.push(obj1);
                })
                this.isShow = true;
+               
            })
        },
     }
