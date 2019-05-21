@@ -16,6 +16,9 @@
             </div>
             </li>
         </ul>
+        <div v-show='isShow' class='loading'>
+            <img src="@/assets/img/loading.gif" alt="">
+        </div>
     </div>
 </template>
 
@@ -26,16 +29,38 @@
             return {
                 movieList:[
 
-                ]
+                ],
+                isShow:true,
+                isLength:true
+            }
+        },
+        methods:{
+            getMovie(){
+            this.isShow = true;
+            axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?city=广州&start='+this.movieList.length+'&count=10')
+            .then((result)=>{
+                this.isShow = false;
+                this.movieList = [...this.movieList,result.data.subjects];
+                if(this.movieList.length == result.data.total){
+                    this.isLength = false;
+                }
+                // console.log(this.movieList);
+            })
             }
         },
         created(){
-            axios.get('/data/movie0.json')
-            .then((result)=>{
-                this.movieList = result.data.subjects;
-                console.log(this.movieList);
-            })
+            this.getMovie();
+            window.onscroll = ()=>{
+                let scrollTop = document.documentElement.scrollTop;
+                let scrollHeight = document.documentElement.scrollHeight;
+                let clientHeight = document.documentElement.clientHeight;
+                // console.log(scrollTop,clientHeight,scrollHeight);
+                if(scrollTop+clientHeight == scrollHeight && this.isLength){
+                    this.getMovie();
+                }
+            }
         }
+        
     }
 </script>
 
@@ -55,5 +80,11 @@
     }
     .movie-content{
         flex:1;
+    }
+    .loading{
+        position:fixed;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
     }
 </style>

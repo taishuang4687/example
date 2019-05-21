@@ -6,6 +6,7 @@ import Movie from '@/views/movie.vue'
 import Music from '@/views/music.vue'
 import Book from '@/views/book.vue'
 import Photo from '@/views/photo.vue'
+import musicList from '@/views/musicList.vue'
 import CommonHeader from '@/components/CommonHeader.vue'
 import CommonFooter from '@/components/CommonFooter.vue'
 Vue.use(Router)
@@ -35,6 +36,9 @@ export default new Router({
     },{
       path:'/',
       redirect:'/movie',
+    },{
+      component:musicList,
+      path:'/musiclist'
     }
   ]
 })
