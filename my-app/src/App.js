@@ -5,13 +5,19 @@ import B from './components/B.js'
 import C from './components/C.js'
 import Home from './components/Home.js'
 import F from './components/F.js'
-// import './App.css'
+import store from './store'
+import {add,reduce} from './action'
+import './App.css'
 import Children from './components/Children.js';
 function App() {
   return (
     <div className="App">
+      <button onClick={()=>{
+        console.log('我要修改num值');
+        store.dispatch(add());
+      }}>add</button>
       <Router>
-        <NavLink to='/'>首页</NavLink>------
+        <NavLink exact to='/'>首页</NavLink>------
         <NavLink to='/a/666'>A页面</NavLink>-----
         <NavLink to='/b'>B页面</NavLink>-----
         <NavLink to='/c/555'>C页面</NavLink>----
