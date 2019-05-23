@@ -7,14 +7,20 @@ import Home from './components/Home.js'
 import F from './components/F.js'
 import './App.css'
 import store from './store'
+import {add,reduce} from './action'
+import {connect} from 'react-redux'
 import Children from './components/Children.js';
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <div></div>
+      <div>{props.num}</div>
       <button onClick={()=>{
-        console.log('我要修改num值')//通过触发action用来修改num值
+        //console.log('我要修改num值')//通过触发action用来修改num值
+        store.dispatch(add(2));
       }}>add</button>
+      <button onClick={()=>{
+        store.dispatch(reduce());
+      }}>reduce</button>
       <hr></hr>
       <Router>
         <NavLink exact to='/'>首页</NavLink>------
@@ -54,5 +60,9 @@ function App() {
     </div>
   );
 }
-
-export default App;
+let mapStateToProps =(state)=>{
+  return {
+    num:state.num
+  }
+}
+export default connect(mapStateToProps)(App);

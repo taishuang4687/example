@@ -1,6 +1,12 @@
-let add = ()=>{
+export let add = (count)=>{
+    // console.log('触发了add action');
     return {
-        type:'ADD'
+        type:'ADD',
+        count:count
     }
 }
-export default add;
+export let reduce = ()=>{
+    return {
+        type:'REDUCE'
+    }
+}
