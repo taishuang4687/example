@@ -5,17 +5,17 @@ import B from './components/B.js'
 import C from './components/C.js'
 import Home from './components/Home.js'
 import F from './components/F.js'
-import store from './store'
-import {add,reduce} from './action'
 import './App.css'
+import store from './store'
 import Children from './components/Children.js';
 function App() {
   return (
     <div className="App">
+      <div></div>
       <button onClick={()=>{
-        console.log('我要修改num值');
-        store.dispatch(add());
+        console.log('我要修改num值')//通过触发action用来修改num值
       }}>add</button>
+      <hr></hr>
       <Router>
         <NavLink exact to='/'>首页</NavLink>------
         <NavLink to='/a/666'>A页面</NavLink>-----
@@ -42,7 +42,7 @@ function App() {
           }}></Route>
           <Route exact path='/children' children={(props)=>{
             let child = props.match?'000':'111';
-            console.log(child)
+            // console.log(child)
             return <Children child={child}></Children>
           }}></Route>
           <Route exact path='/redirect' render={()=>{

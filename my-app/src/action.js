@@ -1,6 +1,6 @@
-export let add = ()=>{
-    console.log(触发了Add,action);
+let add = ()=>{
     return {
         type:'ADD'
     }
 }
+export default add;
