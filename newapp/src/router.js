@@ -8,6 +8,7 @@ import Book from '@/views/book.vue'
 import Photo from '@/views/photo.vue'
 import musicList from '@/views/musicList.vue'
 import movieDetail from '@/views/movieDetail.vue'
+import photoDetail from '@/views/photoDetail.vue'
 import CommonHeader from '@/components/CommonHeader.vue'
 import CommonFooter from '@/components/CommonFooter.vue'
 Vue.use(Router)
@@ -43,6 +44,9 @@ export default new Router({
     },{
       component:movieDetail,
       path:'/movieDetail/:id'
+    },{
+      component:photoDetail,
+      path:'/photoDetail'
     }
   ]
 })

@@ -30,6 +30,7 @@
   background-color: #ccc;
   color: #fff;
 }
+
 .slide2 {
   background-color: pink;
   color: #000;
