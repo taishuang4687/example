@@ -7,6 +7,8 @@ import {
 import Navleft from './components/Navleft'
 import './App.css';
 import Cheader from './components/Cheader';
+import Home from './page/Home';
+import Cfooter from './components/Cfooter';
 const {SubMenu} = Menu;
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         </Col>
         <Col span={20}>
           <Cheader></Cheader>
+          <Home></Home>
+          <Cfooter></Cfooter>
         </Col>
       </Row>
     </div>

@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 
-export default class Cfooter extends Component {
+class Irouter extends Component {
     render() {
         return (
             <div>
-                footer
+                <Router>
+                    
+                </Router>
             </div>
         )
     }
 }
+export default Irouter;

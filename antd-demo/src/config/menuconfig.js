@@ -5,7 +5,7 @@ const menuList = [
         icon:'home'
     },
     {
-        title:"11111",
+        title:"管理",
         path:'/admin/111',
         icon:'home'
     },

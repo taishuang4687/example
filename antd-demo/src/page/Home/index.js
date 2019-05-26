@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Cfooter extends Component {
+export default class Home extends Component {
     render() {
         return (
             <div>
-                footer
+                欢迎来到唯创网讯后台管理平台
             </div>
         )
     }
