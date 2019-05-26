@@ -10,7 +10,7 @@ import Cheader from './components/Cheader';
 import Home from './page/Home';
 import Cfooter from './components/Cfooter';
 const {SubMenu} = Menu;
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Row >
@@ -19,7 +19,7 @@ function App() {
         </Col>
         <Col span={20}>
           <Cheader></Cheader>
-          <Home></Home>
+          {props.children}
           <Cfooter></Cfooter>
         </Col>
       </Row>

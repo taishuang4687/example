@@ -1,7 +1,7 @@
 const menuList = [
     {
         title:"首页",
-        path:'/admin/home',
+        path:'/home',
         icon:'home'
     },
     {

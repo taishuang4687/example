@@ -5,6 +5,7 @@ import {
 } from 'antd'
 import menuList from '../../config/menuconfig';
 import './index.css'
+import {Link} from 'react-router-dom'
 const {SubMenu} = Menu;
 export default class Navleft extends Component {
     createMenu = (menuList)=>{
@@ -18,8 +19,11 @@ export default class Navleft extends Component {
             }
             return (
                 <Menu.Item key={elem.path}>
-                    {elem.icon?<Icon type={elem.icon}></Icon>:null}
-                {elem.title}</Menu.Item>)
+                    <Link to={elem.path}>
+                        {elem.icon?<Icon type={elem.icon}></Icon>:null}
+                        {elem.title}
+                    </Link>
+                    </Menu.Item>)
     })
 }
     componentWillMount = () => {
