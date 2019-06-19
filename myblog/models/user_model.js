@@ -4,7 +4,7 @@ exports.insert_data = function(name,pass,callback){
     db.query(sql,[name,pass],callback);
 }
 exports.checkname=function(name,callback){
-    var sql = 'select * from t_user where ACCOUNT=?';
+    var sql = 'select * from t_users where ACCOUNT=?';
     db.query(sql,[name],callback);
 }
 // exports.checkName = function(name,callback){
