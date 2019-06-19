@@ -15,10 +15,7 @@ exports.checkname=function(req,res,next){
 exports.do_reg=function(req,res,next){
     var name=req.body.email;
     var pass=req.body.pwd;
-    User_model.insert_data=(name,pass,function(err,data){
-        //console.log(data);
-        if(data.affecteRows>0){
-            res.redirect('/login');
-        }
+    User_model.insert_data(name,pass,function(err,data){
+        console.log(data);
     })
 }
