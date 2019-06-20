@@ -7,7 +7,7 @@ exports.checkname=function(name,callback){
     var sql = 'select * from t_users where ACCOUNT=?';
     db.query(sql,[name],callback);
 }
-// exports.checkName = function(name,callback){
-//     var sql = 'select * from user where uname=?';
-//     db.query(sql,[name],callback);
-// }
+exports.sel_name_by_pass=function(name,pass,callback){
+    var sql = 'select * from t_users where ACCOUNT=? and PASSWORD=?';
+    db.query(sql,[name,pass],callback);
+}

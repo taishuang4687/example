@@ -197,15 +197,15 @@ $('#frm_reg').ajaxForm({
 </div>
 <script>
 	$('#f_email').blur(function(){
-		var val=$(this).val();
-		$.post('/checkname',{'value':val},function(data){
-			if(data=='succss'){
-				$('#f_email').after('<span id="s1">用户名重名</span>')
+		var val = $(this).val();
+		$.post('/checkname',function(data){
+			if(data=='success'){
+				$('#f_email').after('<span id="s1">用户名重名</span>');
 			}
 			if(data=='error'){
-				$('#s1').remove();
+				$('s1').remove();
 			}
-		},'text');
+		},'text')
 	})
 </script>
 </body></html>
