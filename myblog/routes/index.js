@@ -19,5 +19,6 @@ router.post('/checkname',User.checkname);
 router.get('/login',User.login);
 router.post('/login',User.do_login);
 router.get('/unlogin',User.unlogin);
+router.get('/index',checkLogin);
 router.get('/index',Blog.index);
 module.exports = router;
