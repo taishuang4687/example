@@ -31,7 +31,7 @@ exports.do_login=function(req,res,next){
     var pass=req.body.pwd;
     User_model.sel_name_by_pass(name,pass,function(err,data){
 		if(data.length>0){
-            console.log(req.session);
+            //console.log(data);
 			//设置cookie session
 			req.session=data[0];
 			res.redirect("/index");

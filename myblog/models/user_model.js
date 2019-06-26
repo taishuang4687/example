@@ -8,6 +8,6 @@ exports.checkname=function(name,callback){
     db.query(sql,[name],callback);
 }
 exports.sel_name_by_pass=function(name,pass,callback){
-    var sql = 'select * from t_users where ACCOUNT=? and PASSWORD=?';
+    var sql = 'select * from t_users where ACCOUNT=? and PASSWORD=?                                                                                                                                                                     ';
     db.query(sql,[name,pass],callback);
 }
